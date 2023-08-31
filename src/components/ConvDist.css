@@ -1,0 +1,29 @@
+/*----------------Main div----------*/
+
+.distContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  gap: 50px;
+}
+
+/*----------------Selector----------*/
+
+.distSelector {
+  display: flex;
+  gap: 20px;
+}
+
+/*----------------Input----------*/
+
+.distValue {
+  display: flex;
+  gap: 20px;
+}
+
+.distValue2 input {
+  border: none;
+  background: none;
+}
