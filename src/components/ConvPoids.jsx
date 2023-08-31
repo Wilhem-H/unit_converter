@@ -2,8 +2,8 @@ import { useState } from "react";
 import { unitePoids } from "../utils/unitePoids";
 
 export default function ConvPoids() {
-  const [kilos, setKilos] = useState(0);
-  const [livres, setLivres] = useState(0);
+  const [kilos, setKilos] = useState();
+  const [livres, setLivres] = useState();
 
   const handleKilosChange = (e) => {
     const value = e.target.value;
