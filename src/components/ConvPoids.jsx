@@ -2,11 +2,21 @@ import { useState } from "react";
 import { unitePoids } from "../utils/unitePoids";
 
 export default function ConvPoids() {
-  const [result, setResult] = useState(0);
+  const [kilos, setKilos] = useState(0);
+  const [livres, setLivres] = useState(0);
 
-  const handleChange = (e) => {
-    const result = unitePoids(e.target.value, e.target.id);
-    setResult(Number(result.toFixed(4)));
+  const handleKilosChange = (e) => {
+    const value = e.target.value;
+    setKilos(value);
+    const poundsValue = unitePoids(value, "kilos");
+    setLivres(Number(poundsValue.toFixed(4)));
+  };
+
+  const handleLivresChange = (e) => {
+    const value = e.target.value;
+    setLivres(value);
+    const kilosValue = unitePoids(value, "livres");
+    setKilos(Number(kilosValue.toFixed(4)));
   };
 
   return (
@@ -15,9 +25,9 @@ export default function ConvPoids() {
         <label>valeur en kg</label>
         <input
           type="text"
-          onChange={handleChange}
           id="kilos"
-          placeholder={result}
+          value={kilos}
+          onChange={handleKilosChange}
         />
       </div>
       <div>
@@ -25,8 +35,8 @@ export default function ConvPoids() {
         <input
           type="text"
           id="livres"
-          onChange={handleChange}
-          placeholder={result}
+          value={livres}
+          onChange={handleLivresChange}
         />
       </div>
     </div>
