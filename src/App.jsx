@@ -7,9 +7,6 @@ import Header from "./pages/Header";
 import ConvPoids from "./components/ConvPoids";
 import ConvDist from "./components/ConvDist";
 
-import ConvPoids from "./components/ConvPoids";
-import ConvDist from "./components/ConvDist";
-
 function App() {
   return (
     <div>
