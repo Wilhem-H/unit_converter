@@ -4,6 +4,8 @@
 }
 
 .divApp {
+  display: flex;
+  flex-direction: column;
   background-color: rgb(15 23 42);
   height: 100vh;
   width: 100%;
