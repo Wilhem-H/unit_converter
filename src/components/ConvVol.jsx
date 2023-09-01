@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { distance } from "../utils/distance";
-import { distValue } from "../utils/data";
+import { volume } from "../utils/volume";
+import { volValue } from "../utils/data";
 
 import "./ConvDist.css";
 
-export default function ConvDist() {
+export default function ConvVol() {
   const [outputResult, setOutputResult] = useState(0);
   const [inputResult, setInputResult] = useState(0);
   const [entries, setEntries] = useState("m");
@@ -13,43 +13,38 @@ export default function ConvDist() {
 
   const handleChangeOutput = (e) => {
     setValue(e.target.value);
-    const result = distance(e.target.value, entries, output);
+    const result = volume(e.target.value, entries, output);
     setInputResult(Number(result.toFixed(4)));
   };
 
   const handleChangeInput = (e) => {
     setValue(e.target.value);
-    const result = distance(e.target.value, entries, output);
+    const result = volume(e.target.value, entries, output);
     setOutputResult(Number(result.toFixed(4)));
   };
 
   const newEntries = (e) => {
     setEntries(e.target.value);
-    const result = distance(value, e.target.value, output);
+    const result = volume(value, e.target.value, output);
     setOutputResult(Number(result.toFixed(4)));
   };
 
   const newOutput = (e) => {
     setOutput(e.target.value);
-    const result = distance(value, entries, e.target.value);
+    const result = volume(value, entries, e.target.value);
     setOutputResult(Number(result.toFixed(4)));
   };
 
   return (
     <div className="distContent">
-      <h2>Distance</h2>
+      <h2>Volume</h2>
       <h3>Unit : </h3>
       <div className="distSelector">
         <div>
-          <label id="inputSelect">In : </label>
-          <select
-            className="fontColor"
-            name="inputSelect"
-            id="inputSelect"
-            onChange={(e) => setEntries(e.target.value)}
-          >
+          <label>In : </label>
+          <select className="fontColor" name="inputSelect" id="inputSelect" onChange={newEntries}>
             <option className="fontColor" value="">--Please choose an option--</option>
-            {distValue.map((val) => (
+            {volValue.map((val) => (
               <option className="fontColor" key={Object.keys(val)[0]} value={Object.keys(val)[0]}>
                 {Object.keys(val)[0]}
               </option>
@@ -57,15 +52,10 @@ export default function ConvDist() {
           </select>
         </div>
         <div>
-          <label id="outputSelect">To : </label>
-          <select
-            className="fontColor"
-            name="output"
-            id="outputSelect"
-            onChange={(e) => setOutput(e.target.value)}
-          >
+          <label>To : </label>
+          <select className="fontColor" name="output" id="outputSelect" onChange={newOutput}>
             <option className="fontColor" value="">--Please choose an option--</option>
-            {distValue.map((val) => (
+            {volValue.map((val) => (
               <option className="fontColor" key={Object.keys(val)[0]} value={Object.keys(val)[0]}>
                 {Object.keys(val)[0]}
               </option>
@@ -75,7 +65,7 @@ export default function ConvDist() {
       </div>
       <div className="distValue">
         <div className="distValue1">
-          <label id="inputValue">Value : </label>
+          <label>Value : </label>
           <input
             className="fontColor"
             type="text"
@@ -85,9 +75,9 @@ export default function ConvDist() {
           />
         </div>
         <div className="distValue2">
-          <label id="outputValue">Result : </label>
+          <label>Result : </label>
           <input
-          className="outputValue"
+            className="outputValue"
             type="text"
             id="outputValue"
             onChange={handleChangeOutput}

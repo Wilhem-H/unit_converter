@@ -14,6 +14,9 @@ export default function Header() {
         <Link to="/convdist">
           <button>Distance</button>
         </Link>
+        <Link to="/convvol">
+          <button>Volume</button>
+        </Link>
       </div>
     </header>
   );
