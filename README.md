@@ -1,6 +1,6 @@
 # Unit Converter
 
-### For this project, we are using TDD to create a currency converter application (Weight/Distance/Volume) in a short amount of time.
+### For this project, we are using TDD to create a currency converter application (Weight/Distance/Volume) in one day.
 
 ## How to use :
 
@@ -11,16 +11,31 @@
 - select your category
 - select unit and unit to compare
 - enter a value
+- get result!
 
 ## What we testing :
 
-With Cypress: - selection de l'unité de mesure - rentrer une unité de mesure - selection du l'unité à comparer - résultat attendu
+With Cypress:
 
-Unit tests: - tester la conversion de 3kg en gramme - tester la conversion de 10km en mètre - tester la conversion de 10ml en L
+-Selecting the unit of measurement
+-Entering a unit of measurement
+-Selecting the unit to compare
+-Expected result
 
-    - tester la conversion de 500g en Livres
-    - tester la conversion de 10km en pieds
-    - tester la conversion de 10L en gallons
+Unit tests:
+
+-Test the conversion of 3kg to grams
+-Test the conversion of 10km to meters
+-Test the conversion of 10ml to liters
+-Test the conversion of 500g to pounds
+-Test the conversion of 10km to feet
+-Test the conversion of 10L to gallons
+
+## Packages :
+
+-react-router-dom: "^6.15.0"
+-jest: "^29.6.4"
+-cypress: "^13.0.0"
 
 ## Owner :
 
