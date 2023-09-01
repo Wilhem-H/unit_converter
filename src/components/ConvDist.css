@@ -3,10 +3,10 @@
 .distContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
   height: 70vh;
-  gap: 50px;
+  gap: 40px;
+  margin-top: 13vh;
 }
 
 /*----------------Selector----------*/
@@ -37,5 +37,5 @@
 }
 
 .fontColor {
-  color:black;
+  color: black;
 }
