@@ -10,7 +10,7 @@ import ConvVol from "./components/ConvVol";
 
 function App() {
   return (
-    <div>
+    <div className="divApp">
       <Router>
         <Header />
         <Routes>

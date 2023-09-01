@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import "./HomeHeader.css";
 
 export default function Header() {
   return (
@@ -8,7 +9,7 @@ export default function Header() {
           <h1>Unit Converter</h1>
         </Link>
         <Link to="/convpoids">
-          <button>Poids</button>
+          <button>weight</button>
         </Link>
         <Link to="/convdist">
           <button>Distance</button>
