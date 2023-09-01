@@ -1,4 +1,4 @@
-// import { describe, it, expect } from "@jest/globals";
+import { describe, it, expect } from "@jest/globals";
 import { unitePoids } from "./unitePoids";
 
 describe("convertisseur de Poids", () => {
