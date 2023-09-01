@@ -81,9 +81,8 @@ export default function ConvVol() {
             type="text"
             id="outputValue"
             onChange={handleChangeOutput}
-            value={outputResult}
+            value={outputResult + " " + output}
           />
-          <p>{output}</p>
         </div>
       </div>
     </div>

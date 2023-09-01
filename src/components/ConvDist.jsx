@@ -91,9 +91,8 @@ export default function ConvDist() {
             type="text"
             id="outputValue"
             onChange={handleChangeOutput}
-            value={outputResult}
+            value={outputResult + " " + output}
           />
-          <p>{output}</p>
         </div>
       </div>
     </div>
