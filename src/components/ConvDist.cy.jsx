@@ -29,6 +29,6 @@ describe("<ConvDist />", () => {
     cy.get("#inputValue").type("10");
     cy.get("#outputValue").should("have.value", "6.2137");
     cy.get("#outputSelect").select("m");
-    cy.get("#outputValue").should("have.value", "10 000");
+    cy.get("#outputValue").should("have.value", "10000");
   });
 });
