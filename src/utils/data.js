@@ -45,7 +45,7 @@ export const tempValue = [
 ];
 
 //poid en kilo
-export const volValue = [
+export const poundValue = [
   { m3: 1000 },
   { dm3: 1 },
   { cm3: 0.001 },

@@ -1,0 +1,18 @@
+.homeContent {
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+}
+
+.homeContent h3 {
+  font-size: 1.4em;
+  margin-top: 30px;
+}
+
+.homeContent img {
+  height: 45vh;
+  margin-top: 50px;
+}
