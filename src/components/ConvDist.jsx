@@ -28,13 +28,14 @@ export default function ConvDist() {
         <div>
           <label id="inputSelect">In : </label>
           <select
+            className="fontColor"
             name="inputSelect"
             id="inputSelect"
             onChange={(e) => setEntries(e.target.value)}
           >
-            <option value="">--Please choose an option--</option>
+            <option className="fontColor" value="">--Please choose an option--</option>
             {distValue.map((val) => (
-              <option key={Object.keys(val)[0]} value={Object.keys(val)[0]}>
+              <option className="fontColor" key={Object.keys(val)[0]} value={Object.keys(val)[0]}>
                 {Object.keys(val)[0]}
               </option>
             ))}
@@ -43,13 +44,14 @@ export default function ConvDist() {
         <div>
           <label id="outputSelect">To : </label>
           <select
+            className="fontColor"
             name="output"
             id="outputSelect"
             onChange={(e) => setOutput(e.target.value)}
           >
-            <option value="">--Please choose an option--</option>
+            <option className="fontColor" value="">--Please choose an option--</option>
             {distValue.map((val) => (
-              <option key={Object.keys(val)[0]} value={Object.keys(val)[0]}>
+              <option className="fontColor" key={Object.keys(val)[0]} value={Object.keys(val)[0]}>
                 {Object.keys(val)[0]}
               </option>
             ))}
@@ -58,8 +60,9 @@ export default function ConvDist() {
       </div>
       <div className="distValue">
         <div className="distValue1">
-          <label id="inputValue">Valeur:</label>
+          <label id="inputValue">Value : </label>
           <input
+            className="fontColor"
             type="text"
             onChange={handleChangeInput}
             id="inputValue"
@@ -67,8 +70,9 @@ export default function ConvDist() {
           />
         </div>
         <div className="distValue2">
-          <label id="outputValue">Résultat :</label>
+          <label id="outputValue">Result : </label>
           <input
+          className="outputValue"
             type="text"
             id="outputValue"
             onChange={handleChangeOutput}

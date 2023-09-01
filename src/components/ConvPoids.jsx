@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { unitePoids } from "../utils/unitePoids";
-import { TableauKilos } from "./TableauKilos";
+import "./ConvDist.css";
 
 export default function ConvPoids() {
   const [kilos, setKilos] = useState();
@@ -21,10 +21,13 @@ export default function ConvPoids() {
   };
 
   return (
-    <div>
-      <div>
-        <label>valeur en kg</label>
+    <div className="distContent">
+      <h2>weight</h2>
+      <h3>Unit :</h3>
+      <div className="distSelector">
+        <label>Value in kg : </label>
         <input
+          className="fontColor"
           type="text"
           id="kilos"
           value={kilos}
@@ -32,15 +35,15 @@ export default function ConvPoids() {
         />
       </div>
       <div>
-        <label>valeur en livre</label>
+        <label>Value in pounds : </label>
         <input
+          className="fontColor"
           type="text"
           id="livres"
           value={livres}
           onChange={handleLivresChange}
         />
       </div>
-      <TableauKilos />
     </div>
   );
 }

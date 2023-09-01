@@ -9,7 +9,7 @@ import ConvDist from "./components/ConvDist";
 
 function App() {
   return (
-    <div>
+    <div className="divApp">
       <Router>
         <Header />
         <Routes>
