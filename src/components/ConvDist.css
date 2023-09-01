@@ -23,6 +23,10 @@
   gap: 20px;
 }
 
+.distValue2 {
+  display: flex;
+}
+
 .distValue2 input {
   border: none;
   background: none;
