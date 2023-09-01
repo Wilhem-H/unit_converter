@@ -1,48 +1,111 @@
 import { useState } from "react";
 import { unitePoids } from "../utils/unitePoids";
+import { weightValue } from "../utils/data";
+
 import "./ConvDist.css";
 
-export default function ConvPoids() {
-  const [kilos, setKilos] = useState();
-  const [livres, setLivres] = useState();
+export default function ConvVol() {
+  const [outputResult, setOutputResult] = useState(0);
+  const [inputResult, setInputResult] = useState(0);
+  const [entries, setEntries] = useState("m");
+  const [output, setOutput] = useState("m");
+  const [value, setValue] = useState(0);
 
-  const handleKilosChange = (e) => {
-    const value = e.target.value;
-    setKilos(value);
-    const poundsValue = unitePoids(value, "kilos");
-    setLivres(Number(poundsValue.toFixed(4)));
+  const handleChangeOutput = (e) => {
+    setValue(e.target.value);
+    const result = unitePoids(e.target.value, entries, output);
+    setInputResult(Number(result.toFixed(4)));
   };
 
-  const handleLivresChange = (e) => {
-    const value = e.target.value;
-    setLivres(value);
-    const kilosValue = unitePoids(value, "livres");
-    setKilos(Number(kilosValue.toFixed(4)));
+  const handleChangeInput = (e) => {
+    setValue(e.target.value);
+    const result = unitePoids(e.target.value, entries, output);
+    setOutputResult(Number(result.toFixed(4)));
+  };
+
+  const newEntries = (e) => {
+    setEntries(e.target.value);
+    const result = unitePoids(value, e.target.value, output);
+    setOutputResult(Number(result.toFixed(4)));
+  };
+
+  const newOutput = (e) => {
+    setOutput(e.target.value);
+    const result = unitePoids(value, entries, e.target.value);
+    setOutputResult(Number(result.toFixed(4)));
   };
 
   return (
     <div className="distContent">
-      <h2>weight</h2>
-      <h3>Unit :</h3>
+      <h2>Weight</h2>
+      <h3>Unit : </h3>
       <div className="distSelector">
-        <label>Value in kg : </label>
-        <input
-          className="fontColor"
-          type="text"
-          id="kilos"
-          value={kilos}
-          onChange={handleKilosChange}
-        />
+        <div>
+          <label>In : </label>
+          <select
+            className="fontColor"
+            name="inputSelect"
+            id="inputSelect"
+            onChange={newEntries}
+          >
+            <option className="fontColor" value="">
+              --Please choose an option--
+            </option>
+            {weightValue.map((val) => (
+              <option
+                className="fontColor"
+                key={Object.keys(val)[0]}
+                value={Object.keys(val)[0]}
+              >
+                {Object.keys(val)[0]}
+              </option>
+            ))}
+          </select>
+        </div>
+        <div>
+          <label>To : </label>
+          <select
+            className="fontColor"
+            name="output"
+            id="outputSelect"
+            onChange={newOutput}
+          >
+            <option className="fontColor" value="">
+              --Please choose an option--
+            </option>
+            {weightValue.map((val) => (
+              <option
+                className="fontColor"
+                key={Object.keys(val)[0]}
+                value={Object.keys(val)[0]}
+              >
+                {Object.keys(val)[0]}
+              </option>
+            ))}
+          </select>
+        </div>
       </div>
-      <div>
-        <label>Value in pounds : </label>
-        <input
-          className="fontColor"
-          type="text"
-          id="livres"
-          value={livres}
-          onChange={handleLivresChange}
-        />
+      <div className="distValue">
+        <div className="distValue1">
+          <label>Value : </label>
+          <input
+            className="fontColor"
+            type="text"
+            onChange={handleChangeInput}
+            id="inputValue"
+            // value={inputResult}
+          />
+        </div>
+        <div className="distValue2">
+          <label>Result : </label>
+          <input
+            className="outputValue"
+            type="text"
+            id="outputValue"
+            onChange={handleChangeOutput}
+            value={outputResult + " " + output}
+          />
+        </div>
       </div>
     </div>
   );

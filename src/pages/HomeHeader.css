@@ -21,8 +21,8 @@ a {
 button {
   background-color: rgb(21, 45, 49);
   margin-top: 2rem;
-  margin-left: 2rem; 
-  margin-right: 2rem; 
+  margin-left: 2rem;
+  margin-right: 2rem;
   border-radius: 10px;
   height: 4rem;
   width: 8rem;
@@ -31,4 +31,8 @@ button {
 
 .h2Button {
   color: rgb(94 234 212);
+}
+
+.navbarHeader {
+  margin-top: 7vh;
 }
