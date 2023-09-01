@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { unitePoids } from "../utils/unitePoids";
+import { TableauKilos } from "./TableauKilos";
 
 export default function ConvPoids() {
   const [kilos, setKilos] = useState();
@@ -39,6 +40,7 @@ export default function ConvPoids() {
           onChange={handleLivresChange}
         />
       </div>
+      <TableauKilos />
     </div>
   );
 }
