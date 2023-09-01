@@ -26,7 +26,7 @@ export default function ConvDist() {
       <h3>Unit :</h3>
       <div className="distSelector">
         <div>
-          <label id="inputSelect">In : </label>
+          <label>In : </label>
           <select
             name="inputSelect"
             id="inputSelect"
@@ -41,7 +41,7 @@ export default function ConvDist() {
           </select>
         </div>
         <div>
-          <label id="outputSelect">To : </label>
+          <label>To : </label>
           <select
             name="output"
             id="outputSelect"
@@ -58,7 +58,7 @@ export default function ConvDist() {
       </div>
       <div className="distValue">
         <div className="distValue1">
-          <label id="inputValue">Valeur:</label>
+          <label>Valeur:</label>
           <input
             type="text"
             onChange={handleChangeInput}
@@ -67,7 +67,7 @@ export default function ConvDist() {
           />
         </div>
         <div className="distValue2">
-          <label id="outputValue">Résultat :</label>
+          <label>Résultat :</label>
           <input
             type="text"
             id="outputValue"
